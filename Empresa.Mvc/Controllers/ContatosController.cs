@@ -39,6 +39,11 @@ namespace Empresa.Mvc.Controllers
             {
                 return View(contato);
             }
+
+            _contexto.Add(contato);
+            _contexto.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
 
