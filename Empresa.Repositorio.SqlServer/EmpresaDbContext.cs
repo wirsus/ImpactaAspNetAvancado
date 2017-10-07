@@ -11,6 +11,7 @@ namespace Empresa.Repositorio.SqlServer
     {
         public EmpresaDbContext(DbContextOptions options) : base(options)
         {
+            Database.EnsureCreated();
         }
         public DbSet<Contato> Contatos { get; set; }
 
