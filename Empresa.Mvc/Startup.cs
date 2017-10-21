@@ -31,8 +31,12 @@ namespace Empresa.Mvc
         {
             // Add framework services.
             services.AddMvc();
-
+            
+            //Configuração de banco de dados
             services.AddDbContext<EmpresaDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("EmpresaConnectionString")));
+
+            //Deixar classe de configuração disponível em todo o projeto
+            services.AddSingleton<IConfiguration>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
