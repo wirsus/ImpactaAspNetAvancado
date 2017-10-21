@@ -30,7 +30,11 @@ namespace Empresa.Mvc.Controllers
         // GET: /Create/
         public IActionResult Create()
         {
-            return View();
+            if (User.HasClaim("Contatos", "Inserir"))
+            {
+                return View(); 
+            }
+            return RedirectToAction("AcessoNegado", "Home");
         }
 
         // POST: /Create/
