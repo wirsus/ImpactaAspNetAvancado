@@ -3,6 +3,7 @@
 
   "dependencies": {
     "Empresa.Dominio": "1.0.0-*",
+    //"Microsoft.AspNet.Identity.EntityFramework": "2.2.1",
     "Microsoft.EntityFrameworkCore": "1.1.3",
     "NETStandard.Library": "1.6.1"
   },

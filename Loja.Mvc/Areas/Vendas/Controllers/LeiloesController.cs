@@ -10,9 +10,16 @@ using System.Web.Mvc;
 
 namespace Loja.Mvc.Areas.Vendas.Controllers
 {
+    using System.Security.Claims;
+    using System.Web.Mvc;
+
+    [Authorize(Roles = "Administrador, Leiloeiro, Comprador")]
+
     public class LeiloesController : Controller
     {
         private LojaDbContext _db = new LojaDbContext();
+        
+        [AllowAnonymous]
         // GET: Vendas/Leiloes
         public ActionResult Index()
         {
@@ -26,6 +33,13 @@ namespace Loja.Mvc.Areas.Vendas.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
+            var usuario = (ClaimsIdentity)User.Identity;
+            if (!usuario.HasClaim(Modulo.Leilao.ToString(), Acao.Cancelar.ToString() ))
+            {
+                return RedirectToAction("Login", "Account", new { area = "" });
+            }
+
             Produto produto = _db.Produtos.Find(id);
             if (produto == null)
             {

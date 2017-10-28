@@ -2,6 +2,7 @@
   "version": "1.0.0-*",
 
   "dependencies": {
+    //"Microsoft.AspNet.Identity.EntityFramework": "2.2.1",
     "NETStandard.Library": "1.6.0",
     "System.ComponentModel.Annotations": "4.1.0"
   },
