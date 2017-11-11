@@ -10,7 +10,13 @@ namespace Loja.Mvc.Controllers
     {
         public ActionResult Index()
         {
+            DefinirLinguagemPadrao();
             return View();
+        }
+
+        private void DefinirLinguagemPadrao()
+        {
+            throw new NotImplementedException();
         }
 
         public ActionResult About()
