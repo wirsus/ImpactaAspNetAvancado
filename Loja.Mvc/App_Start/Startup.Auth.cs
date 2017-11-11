@@ -58,8 +58,8 @@ namespace Loja.Mvc
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "1597410406993933",
-               appSecret: "dba6b4b344023013ad1c9aa308b70889");
+               appId: "921925991299874",
+               appSecret: "b7b5f9a0917ada3362b0dc3874f9a655");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {

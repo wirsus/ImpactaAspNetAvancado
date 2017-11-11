@@ -197,6 +197,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Cookie.cs" />
+    <Compile Include="Helpers\CulturaHelper.cs" />
     <Compile Include="Helpers\Mapeamento.cs" />
     <Compile Include="Areas\Vendas\Models\ProdutoViewModel.cs" />
     <Compile Include="Hubs\LeilaoHub.cs" />
@@ -205,6 +207,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Validacoes\IdadeMinimaAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\blank.gif" />
@@ -223,6 +226,7 @@
     <Content Include="Areas\Vendas\Views\Leiloes\Index.cshtml" />
     <Content Include="Areas\Vendas\Views\Leiloes\Details.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\datejs.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -233,12 +237,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Leiloes\Details.js" />
-    <Content Include="Scripts\loginFacebook.js" />
     <Content Include="Scripts\methods_pt.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Validacoes\idadeMinima.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -300,6 +304,10 @@
     <ProjectReference Include="..\Loja.Repositorios.SqlServer.EF\Loja.Repositorios.SqlServer.EF.csproj">
       <Project>{3cf1e0b2-8b77-4989-a55f-f79679840979}</Project>
       <Name>Loja.Repositorios.SqlServer.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lojas.Resources\Lojas.Resources.csproj">
+      <Project>{6b4a2e22-343c-43c3-b996-058815a76192}</Project>
+      <Name>Lojas.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
